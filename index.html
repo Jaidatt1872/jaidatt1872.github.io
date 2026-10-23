@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Jaidatt Kadam – Full-Stack Developer & Automation Engineer</title>
+<meta name="description" content="Portfolio of Jaidatt Kadam, a software engineer skilled in Node.js, React, PostgreSQL, MongoDB and test automation. Based in Mumbai.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,700;12..96,800&family=Newsreader:opsz,wght@6..72,400;6..72,500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#E8EDF2; --surface:#F6F8FA; --ink:#14213D; --muted:#51607A; --line:#C5CFDB; --accent:#2B4EFF; --on-accent:#fff; --mark:#F2D14B;
+  --sans:"Bricolage Grotesque",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --serif:"Newsreader",Georgia,"Times New Roman",serif;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){--bg:#10172A;--surface:#17203A;--ink:#E6ECF6;--muted:#9AA8C2;--line:#2A3555;--accent:#7C94FF;--on-accent:#10172A}
+}
+:root[data-theme="dark"]{--bg:#10172A;--surface:#17203A;--ink:#E6ECF6;--muted:#9AA8C2;--line:#2A3555;--accent:#7C94FF;--on-accent:#10172A}
+html{scroll-padding-top:24px;color-scheme:light dark;scroll-behavior:smooth}
+*,*::before,*::after{box-sizing:inherit}
+body{margin:0;background:var(--bg);color:var(--ink);font:18px/1.65 var(--serif)}
+a{color:inherit}
+a:focus-visible,summary:focus-visible{outline:3px solid var(--accent);outline-offset:3px;border-radius:2px}
+.wrap{max-width:1120px;margin:0 auto;padding:56px 28px 96px;display:grid;grid-template-columns:290px minmax(0,1fr);gap:80px}
+aside{position:sticky;top:56px;align-self:start}
+.status{display:inline-flex;align-items:center;gap:8px;background:var(--mark);color:#14213D;font:700 .85rem var(--sans);padding:5px 12px;border-radius:3px;margin-bottom:26px}
+.status i{width:8px;height:8px;border-radius:50%;background:#14213D;animation:pulse 2.4s ease-in-out infinite}
+@keyframes pulse{50%{opacity:.25}}
+h1{font:800 clamp(3rem,6vw,4.2rem)/.92 var(--sans);letter-spacing:-.04em;margin:0 0 18px}
+.role{font:400 1.05rem/1.5 var(--sans);color:var(--muted);margin:0 0 30px}
+nav a,.links a{display:block;font:500 1rem var(--sans);text-decoration:none;padding:5px 0;color:var(--muted)}
+nav a:hover,.links a:hover{color:var(--accent)}
+.links{margin-top:26px;padding-top:22px;border-top:1px solid var(--line)}
+h2{font:700 1.6rem/1.2 var(--sans);letter-spacing:-.015em;margin:0 0 22px}
+section{margin-bottom:84px}
+p{margin:0 0 1em;max-width:62ch}
+.lead{font:500 clamp(1.9rem,3.6vw,2.6rem)/1.15 var(--sans);letter-spacing:-.025em;max-width:20ch;margin-bottom:28px}
+.lead span{background:linear-gradient(transparent 62%,var(--mark) 62%);color:inherit}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .lead span{background:linear-gradient(transparent 62%,#4a4a1f 62%)}}
+:root[data-theme="dark"] .lead span{background:linear-gradient(transparent 62%,#4a4a1f 62%)}
+details{border-top:1px solid var(--line);padding-left:0;transition:background .2s}
+details:last-of-type{border-bottom:1px solid var(--line)}
+details[open]{background:var(--surface)}
+summary{list-style:none;cursor:pointer;display:grid;grid-template-columns:1fr auto;gap:6px 16px;padding:22px 16px}
+summary::-webkit-details-marker{display:none}
+summary .t{font:700 1.4rem var(--sans);letter-spacing:-.01em}
+summary .y{font:500 .95rem var(--sans);color:var(--accent);align-self:center}
+summary .y::after{content:"+";margin-left:10px;display:inline-block;transition:transform .2s}
+details[open] summary .y::after{transform:rotate(45deg)}
+summary .d{grid-column:1/-1;color:var(--muted)}
+summary:hover .t{color:var(--accent)}
+.body{padding:0 16px 26px;max-width:68ch}
+.body ul.pts{padding-left:1.1em;margin:0 0 4px}
+.body ul.pts li{margin-bottom:.6em}
+.stack{display:flex;gap:6px;flex-wrap:wrap;margin:16px 0 0;padding:0;list-style:none}
+.stack li{font:500 .85rem var(--sans);background:var(--bg);border:1px solid var(--line);padding:3px 11px;border-radius:3px}
+.job{display:grid;grid-template-columns:140px 1fr;gap:20px;padding:22px 0;border-top:1px solid var(--line)}
+.job:last-of-type{border-bottom:1px solid var(--line)}
+.when{font:500 .95rem var(--sans);color:var(--muted)}
+.job b{font:700 1.2rem var(--sans)}
+.job .org{font:400 1rem var(--sans);color:var(--accent);margin:2px 0 12px}
+.job ul{padding-left:1.1em;margin:0}
+.job li{margin-bottom:.55em}
+.skillrow{display:grid;grid-template-columns:150px 1fr;gap:20px;padding:14px 0;border-top:1px solid var(--line);align-items:baseline}
+.skillrow:last-of-type{border-bottom:1px solid var(--line)}
+.skillrow h3{font:700 1rem var(--sans);margin:0}
+.skillrow .stack{margin:0}
+.facts{list-style:none;padding:0;margin:0}
+.facts li{padding:10px 0;border-top:1px solid var(--line);display:grid;grid-template-columns:150px 1fr;gap:20px}
+.facts li:last-child{border-bottom:1px solid var(--line)}
+.facts b{font:700 1rem var(--sans)}
+.cta{display:inline-block;font:700 1.15rem var(--sans);background:var(--accent);color:var(--on-accent);padding:14px 26px;border-radius:4px;text-decoration:none;transition:transform .15s}
+.cta:hover{transform:translateY(-2px)}
+.cta.alt{background:transparent;color:var(--ink);border:2px solid var(--ink);padding:12px 24px;margin-left:10px}
+.cta.alt:hover{border-color:var(--accent);color:var(--accent)}
+.ctas{display:flex;gap:12px;flex-wrap:wrap}
+.ctas .cta.alt{margin-left:0}
+nav a.on{color:var(--ink);font-weight:700;box-shadow:inset 3px 0 0 var(--accent);padding-left:12px}
+.more{display:inline-block;margin-top:14px;font:500 1rem var(--sans);color:var(--accent)}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.status i{animation:none}.cta:hover{transform:none}}
+@media (max-width:860px){
+  .wrap{grid-template-columns:1fr;gap:44px;padding:32px 20px 72px}
+  aside{position:static}
+  nav{display:flex;gap:18px;flex-wrap:wrap}
+  .job,.skillrow,.facts li{grid-template-columns:1fr;gap:4px}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <aside>
+    <span class="status"><i></i>Open to SDE roles</span>
+    <h1>Jaidatt Kadam</h1>
+    <p class="role">Full-stack developer and automation engineer. Mumbai, India.</p>
+    <nav aria-label="Sections">
+      <a href="#about">About</a>
+      <a href="#projects">Projects</a>
+      <a href="#experience">Experience</a>
+      <a href="#skills">Skills</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <div class="links">
+      <a href="https://github.com/jaidatt1872" target="_blank" rel="noopener">GitHub</a>
+      <a href="https://www.linkedin.com/in/jaidatt-kadam-8b263a280" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="mailto:jaidatt18@gmail.com">jaidatt18@gmail.com</a>
+    </div>
+  </aside>
+
+  <main>
+    <section id="about">
+      <p class="lead">I build secure web apps and I know how to <span>break them</span> before users do.</p>
+      <p>I’m a software engineer with hands-on experience in JavaScript, Node.js, Express and React, backed by PostgreSQL and MongoDB. Day to day I work as a test engineer on a banking project, so I think about reliability, authentication and edge cases from the first line of code.</p>
+      <p>I build and ship my own full-stack projects, and I use AI tools such as Claude, Copilot, ChatGPT and Gemini to move faster without lowering the quality bar.</p>
+    </section>
+
+    <section id="projects">
+      <h2>Projects</h2>
+      <details open>
+        <summary><span class="t">QuestLog</span><span class="y">Full-stack</span><span class="d">A game discovery and tracking platform with a secure REST API and gaming-stats visualizations.</span></summary>
+        <div class="body">
+          <ul class="pts">
+            <li>Designed a Node.js and Express backend with JWT authentication, bcrypt password hashing and role-based middleware protecting private routes.</li>
+            <li>Modeled data with Prisma ORM on PostgreSQL for type-safe, efficient queries.</li>
+            <li>Configured CORS and role-based access control, and verified every endpoint through API testing in Postman.</li>
+          </ul>
+          <ul class="stack"><li>Node.js</li><li>Express.js</li><li>PostgreSQL</li><li>Prisma</li><li>JWT</li><li>REST APIs</li></ul>
+          <a class="more" href="https://github.com/Jaidatt1872/questLog" target="_blank" rel="noopener">View code on GitHub</a>
+        </div>
+      </details>
+      <details>
+        <summary><span class="t">VidFlix</span><span class="y">MERN stack</span><span class="d">A responsive video streaming app that recreates the core experience of Netflix.</span></summary>
+        <div class="body">
+          <ul class="pts">
+            <li>Built the interface in React with Redux for predictable, scalable state management.</li>
+            <li>Created a RESTful backend on Node.js, Express and MongoDB for flexible content storage and retrieval.</li>
+            <li>Added secure user authentication and session management, and tested the API in Postman.</li>
+          </ul>
+          <ul class="stack"><li>MongoDB</li><li>Express.js</li><li>React</li><li>Node.js</li><li>Redux</li></ul>
+          <a class="more" href="https://github.com/Jaidatt1872/Netflix-Clone" target="_blank" rel="noopener">View code on GitHub</a>
+        </div>
+      </details>
+    </section>
+
+    <section id="experience">
+      <h2>Experience</h2>
+      <div class="job">
+        <span class="when">Sept 2024 – Oct 2026</span>
+        <div>
+          <b>Test Engineer (QA)</b>
+          <div class="org">QualityKiosk Technologies · Yes Bank project</div>
+          <ul>
+            <li>Built and maintained automated regression suites in Selenium WebDriver, cutting manual testing effort and speeding up releases.</li>
+            <li>Created API automation and validation in Postman covering request-response integrity, authentication flows and performance.</li>
+            <li>Worked with engineers to reproduce and resolve defects using Git and JIRA in an Agile/Scrum team, and gave engineering input in sprint planning and stand-ups.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills">
+      <h2>Skills</h2>
+      <div class="skillrow"><h3>Languages</h3><ul class="stack"><li>JavaScript</li><li>Python</li><li>C++</li></ul></div>
+      <div class="skillrow"><h3>Frontend</h3><ul class="stack"><li>React</li><li>Redux</li><li>HTML</li><li>CSS</li><li>Tailwind CSS</li><li>Bootstrap</li></ul></div>
+      <div class="skillrow"><h3>Backend</h3><ul class="stack"><li>Node.js</li><li>Express.js</li><li>REST API design</li></ul></div>
+      <div class="skillrow"><h3>Databases</h3><ul class="stack"><li>PostgreSQL</li><li>MongoDB</li><li>MySQL</li><li>Prisma ORM</li></ul></div>
+      <div class="skillrow"><h3>Testing</h3><ul class="stack"><li>Selenium</li><li>Postman</li><li>Regression testing</li></ul></div>
+      <div class="skillrow"><h3>AI tools</h3><ul class="stack"><li>Claude</li><li>GitHub Copilot</li><li>ChatGPT</li><li>Gemini</li><li>Agentic workflows</li></ul></div>
+      <div class="skillrow"><h3>Workflow</h3><ul class="stack"><li>Git</li><li>JIRA</li><li>Agile/Scrum</li></ul></div>
+    </section>
+
+    <section id="more">
+      <h2>Education and more</h2>
+      <ul class="facts">
+        <li><b>Education</b><span>B.E. in Electronics and Telecommunications, Thadomal Shahani Engineering College, 2020–2024. CGPA 8.61 / 10.</span></li>
+        <li><b>Certifications</b><span>Google AI Certification, plus Python, Web Development and SQL courses on Udemy.</span></li>
+        <li><b>Practice</b><span>150+ LeetCode problems on data structures and algorithms. Workshops and hackathons.</span></li>
+        <li><b>Off the clock</b><span>Competitive Valorant team lead.</span></li>
+      </ul>
+    </section>
+
+    <section id="contact">
+      <h2>Contact</h2>
+      <p>I’m looking for a software development role where I can build and own backend and full-stack features. Send me a note and I’ll get back to you.</p>
+      <div class="ctas">
+        <a class="cta" href="mailto:jaidatt18@gmail.com">Email me</a>
+        <a class="cta alt" href="https://www.linkedin.com/in/jaidatt-kadam-8b263a280" target="_blank" rel="noopener">LinkedIn</a>
+        <a class="cta alt" href="https://github.com/jaidatt1872" target="_blank" rel="noopener">GitHub</a>
+      </div>
+    </section>
+  </main>
+</div>
+<script>
+(function(){
+  if(!("IntersectionObserver" in window))return;
+  var links={};document.querySelectorAll("nav a").forEach(function(a){links[a.getAttribute("href").slice(1)]=a});
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){
+    if(e.isIntersecting){Object.keys(links).forEach(function(k){links[k].classList.toggle("on",k===e.target.id)})}
+  })},{rootMargin:"-30% 0px -60% 0px"});
+  Object.keys(links).forEach(function(k){var s=document.getElementById(k);if(s)io.observe(s)});
+})();
+</script>
+</body>
+</html>
